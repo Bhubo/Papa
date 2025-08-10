@@ -1,7 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="Papa"
-        android:theme="@style/Theme.Material3.Dark">
+        android:label="Papa">
         <activity
             android:name=".phone.MainActivity"
             android:exported="true">

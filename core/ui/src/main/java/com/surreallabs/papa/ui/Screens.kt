@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.surreallabs.papa.equilibrium.EquilibriumSettings
 
+@OptIn(ExperimentalMaterial3Api::class) // Added OptIn
 @Composable
 fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit) {
     Scaffold(topBar = { TopAppBar(title = { Text("Papa") }) }) { pad ->
@@ -27,6 +28,7 @@ fun BindScreen(onDone: () -> Unit) {
     Centered("Bind‑only exchange ready.", actionText = "Mark as Bound", onAction = onDone)
 }
 
+@OptIn(ExperimentalMaterial3Api::class) // Added OptIn
 @Composable
 fun CalibrateScreen(settings: EquilibriumSettings, onChange: (EquilibriumSettings) -> Unit, onSave: () -> Unit) {
     var cmPer360 by remember { mutableStateOf(settings.cmPer360) }
