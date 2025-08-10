@@ -5,23 +5,46 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.surreallabs.papa.equilibrium.EquilibriumSettings
+import com.surreallabs.papa.equilibrium.EquilibriumSettings // Assuming R class is available (e.g., com.surreallabs.papa.core.ui.R or similar)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit) {
     Scaffold(
-        topBar = { TopAppBar(title = { Text("Papa") }) }
+        topBar = {
+            TopAppBar(
+                title = { Text("Voodoo") },
+                navigationIcon = {
+                    Image(
+                        painter = painterResource(id = R.drawable.loa_baron),
+                        contentDescription = "Voodoo Doll",
+                        modifier = Modifier.size(40.dp)
+                    )
+                }
+            )
+        }
     ) { pad ->
         Column(
             Modifier
                 .padding(pad)
-                .padding(20.dp)) {
-            PapaHeader("Papa Papa", "Equilibrium / Local First / Bound / Private")
+                .padding(20.dp)
+        ) {
+            // Inlined PapaHeader
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 20.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(text = "Voodoo", style = MaterialTheme.typography.headlineLarge)
+                Text(text = "Personal Aware Private Architecture", style = MaterialTheme.typography.titleSmall)
+            }
 
             // Bind a device
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -33,7 +56,10 @@ fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit
                         .clickable { onBind() }
                         .padding(end = 8.dp)
                 )
-                PrimaryButton("Bind a device", onBind, Modifier.weight(1f))
+                // Inlined PrimaryButton
+                Button(onClick = onBind, modifier = Modifier.weight(1f)) {
+                    Text("Bind a device")
+                }
             }
             Spacer(Modifier.height(12.dp))
 
@@ -47,7 +73,10 @@ fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit
                         .clickable { onCalibrate() }
                         .padding(end = 8.dp)
                 )
-                PrimaryButton("Calibrate feel", onCalibrate, Modifier.weight(1f))
+                // Inlined PrimaryButton
+                Button(onClick = onCalibrate, modifier = Modifier.weight(1f)) {
+                    Text("Calibrate feel")
+                }
             }
             Spacer(Modifier.height(12.dp))
 
@@ -61,7 +90,10 @@ fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit
                         .clickable { onVerify() }
                         .padding(end = 8.dp)
                 )
-                PrimaryButton("Verify (Spin/Cursor)", onVerify, Modifier.weight(1f))
+                // Inlined PrimaryButton
+                Button(onClick = onVerify, modifier = Modifier.weight(1f)) {
+                    Text("Verify (Spin/Cursor)")
+                }
             }
         }
     }
@@ -69,7 +101,23 @@ fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit
 
 @Composable
 fun BindScreen(onDone: () -> Unit) {
-    Centered("Bind‑only exchange ready.", actionText = "Awaiting Peer", onAction = onDone)
+    // Inlined Centered
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.loa_poppet),
+            contentDescription = "Binding Poppet",
+            modifier = Modifier.size(128.dp)
+        )
+        Spacer(Modifier.height(20.dp))
+        // Inlined PrimaryButton (as Button)
+        Button(onClick = onDone, modifier = Modifier.fillMaxWidth(0.75f)) {
+            Text("Bind")
+        }
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -80,28 +128,50 @@ fun CalibrateScreen(settings: EquilibriumSettings, onChange: (EquilibriumSetting
     var degPerSec by remember { mutableStateOf(settings.degPerSec) }
 
     Scaffold(topBar = { TopAppBar(title = { Text("Calibrate Feel") }) }) { pad ->
-        Column(Modifier.padding(pad).padding(20.dp)) {
-            Text("cm / 360°: ${cmPer360}")
+        Column(
+            Modifier
+                .padding(pad)
+                .padding(20.dp)
+        ) {
+            Text("cm / 360°: ${"%.2f".format(cmPer360)}")
             Slider(value = cmPer360, onValueChange = { cmPer360 = it }, valueRange = 1f..100f)
 
-            Text("px / cm: ${pxPerCm}")
+            Text("px / cm: ${"%.0f".format(pxPerCm)}")
             Slider(value = pxPerCm, onValueChange = { pxPerCm = it }, valueRange = 10f..1000f)
 
-            Text("deg / s: ${degPerSec}")
+            Text("deg / s: ${"%.0f".format(degPerSec)}")
             Slider(value = degPerSec, onValueChange = { degPerSec = it }, valueRange = 10f..2000f)
 
             Spacer(Modifier.height(12.dp))
-            PrimaryButton("Save", onClick = {
-                onChange(EquilibriumSettings(cmPer360, pxPerCm, degPerSec))
-                onSave()
-            }, modifier = Modifier.fillMaxWidth())
+            // Inlined PrimaryButton
+            Button(
+                onClick = {
+                    onChange(EquilibriumSettings(cmPer360, pxPerCm, degPerSec))
+                    onSave()
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Save")
+            }
         }
     }
 }
 
 @Composable
 fun VerifyScreen(onDone: () -> Unit) {
-    Centered("Run Spin & Cursor tests.", actionText = "Equilibrium achieved", onAction = onDone)
+    // Inlined Centered
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("Run Spin & Cursor tests.", style = MaterialTheme.typography.headlineMedium)
+        Spacer(Modifier.height(20.dp))
+        // Inlined PrimaryButton (as Button)
+        Button(onClick = onDone) {
+            Text("Equilibrium achieved")
+        }
+    }
 }
 
 /*
