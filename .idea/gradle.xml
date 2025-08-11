@@ -10,6 +10,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app-car" />
+            <option value="$PROJECT_DIR$/app-phone" />
+            <option value="$PROJECT_DIR$/app-tv" />
+            <option value="$PROJECT_DIR$/app-wear" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/design" />
+            <option value="$PROJECT_DIR$/core/equilibrium" />
+            <option value="$PROJECT_DIR$/core/ui" />
           </set>
         </option>
       </GradleProjectSettings>

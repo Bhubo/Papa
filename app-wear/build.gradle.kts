@@ -3,14 +3,15 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.example.papa.wear"
+    namespace = "com.surreallabs.papa.wear"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.papa.wear"
+        applicationId = "com.surreallabs.papa.wear"
         minSdk = 30 // Adjust as needed for Wear OS
         targetSdk = 34
         versionCode = 1
@@ -25,13 +26,10 @@ android {
         jvmTarget = "17"
     }
 
-    // Enable Compose
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11" // Updated for Kotlin 2.0.0
-    }
+    // buildFeatures { compose = true } // REMOVED
+    // composeOptions {
+    //     kotlinCompilerExtensionVersion = "1.5.11" // REMOVED
+    // }
 }
 
 dependencies {
@@ -47,9 +45,17 @@ dependencies {
     implementation("androidx.wear.compose:compose-material:1.3.0")
     implementation("androidx.wear.compose:compose-foundation:1.3.0")
 
-    // Complications
-    implementation("androidx.wear:wear-watchface-complications-data-source-ktx:1.2.1")
+    // Watch Face & Complications
+    implementation("androidx.wear.watchface:watchface:1.2.1")
+    implementation("androidx.wear.watchface:watchface-complications-rendering:1.2.1")
+    implementation("androidx.wear.watchface:watchface-style:1.2.1")
+    implementation("androidx.wear.watchface:watchface-editor:1.2.1")
+    implementation("androidx.wear.watchface:watchface-complications-data-source-ktx:1.2.1") // This was already present
 
     // Wearable Data Layer
     implementation("com.google.android.gms:play-services-wearable:18.2.0")
+
+    // Project dependencies
+    implementation(project(":core:design"))
+    implementation(project(":core:ui"))
 }

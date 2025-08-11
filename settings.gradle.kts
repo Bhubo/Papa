@@ -24,10 +24,10 @@ dependencyResolutionManagement {
 rootProject.name = "papa-android"
 
 // List your modules here
-// include(":app-phone")
-// include(":app-wear")
-// include(":app-tv")
-// include(":app-car")
-// include(":core:design")
-// include(":core:ui")
-// include(":core:equilibrium")
+include(":app-phone")
+include(":app-wear")
+include(":app-tv")
+include(":app-car")
+include(":core:design")
+include(":core:ui")
+include(":core:equilibrium")

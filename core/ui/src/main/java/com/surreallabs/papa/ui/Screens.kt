@@ -19,11 +19,11 @@ fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Voodoo") },
+                title = { Text("Vodou") },
                 navigationIcon = {
                     Image(
                         painter = painterResource(id = R.drawable.loa_baron),
-                        contentDescription = "Voodoo Doll",
+                        contentDescription = "Vodou Doll",
                         modifier = Modifier.size(40.dp)
                     )
                 }
@@ -42,7 +42,7 @@ fun HomeScreen(onBind: () -> Unit, onCalibrate: () -> Unit, onVerify: () -> Unit
                     .padding(bottom = 20.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = "Voodoo", style = MaterialTheme.typography.headlineLarge)
+                Text(text = "Vodou", style = MaterialTheme.typography.headlineLarge)
                 Text(text = "Personal Aware Private Architecture", style = MaterialTheme.typography.titleSmall)
             }
 

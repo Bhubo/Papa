@@ -4,6 +4,14 @@
     <selectionStates>
       <SelectionState runConfigName="app-wear">
         <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2025-08-11T05:19:17.386823Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=RFCX60V2PQB" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="app-tv">
         <option name="selectionMode" value="DROPDOWN" />

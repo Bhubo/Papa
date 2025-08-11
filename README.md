@@ -1,6 +1,6 @@
 # Papa — Unified UI (Android Monorepo)
 
-> **Papa** is the unified UI layer of the Voodoo ecosystem, built on **PAPA** (Personal Aware Private Architecture). It delivers a consistent, device‑agnostic feel across Android surfaces while keeping data **local and permissioned**. No cloud. No broadcasts. **SurrealLabs cannot access your data** by design. *Voodoo Certified* means it also works **independently of SurrealLabs services**.
+> **Papa** is the unified UI layer of the Vodou ecosystem, built on **PAPA** (Personal Aware Private Architecture). It delivers a consistent, device‑agnostic feel across Android surfaces while keeping data **local and permissioned**. No cloud. No broadcasts. **SurrealLabs cannot access your data** by design. *Vodou Certified* means it also works **independently of SurrealLabs services**.
 
 ## Intended features & goals *(living document — will evolve)*
 
@@ -55,13 +55,13 @@ Papa is the UI shell, patterns, and shared logic. It includes and orchestrates s
 
 ## Binding ritual (UX spec)
 
-**Intent:** binding is a small ceremony, not a generic “Bluetooth pairing.” Any Papa‑aware device can bind to a Voodoo‑enabled device using an offline, local exchange. No cloud.
+**Intent:** binding is a small ceremony, not a generic “Bluetooth pairing.” Any Papa‑aware device can bind to a Vodou‑enabled device using an offline, local exchange. No cloud.
 
 ### Ritual narrative
 
 1. **Hold out your hand** to invite binding. The initiating device enters *Ritual* mode (discoverable, no internet).
 2. Nearby devices that are also in *Ritual* mode approach; LEDs glow to indicate proximity.
-3. On successful local attest, **both devices signal**: **one slow flash** then **three fast flashes** *(13 — Voodoo theme)* and a matching haptic pattern (long, short×3).
+3. On successful local attest, **both devices signal**: **one slow flash** then **three fast flashes** *(13 — Vodou theme)* and a matching haptic pattern (long, short×3).
 4. Status changes to **Bound**. Settings and attest are stored locally.
 5. **Unbind** by a mirrored gesture: **close your hand** and **shake for \~3s**; devices acknowledge with **three fast flashes then one slow**; record is cleared locally.
 

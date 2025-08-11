@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-feature android:name="android.hardware.type.watch" />
-    <application android:label="Papa Wear" android:theme="@android:style/Theme.DeviceDefault">
+    <application android:label="Papa Wear" android:icon="@mipmap/purple_gem" android:theme="@android:style/Theme.DeviceDefault">
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
