@@ -41,4 +41,7 @@ dependencies {
     implementation(project(":core:design"))
     implementation(project(":core:ui"))
     implementation(project(":core:equilibrium"))
+
+    // Wearable Data Layer
+    implementation("com.google.android.gms:play-services-wearable:18.2.0")
 }
