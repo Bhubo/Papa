@@ -1,19 +1,46 @@
-# Papa — Unified UI (Android Monorepo)
+# **P.A.P.A. — Unified UI (Android Monorepo)**
 
-> **Papa** is the unified UI layer of the Vodou ecosystem, built on **PAPA** (Personal Aware Private Architecture). It delivers a consistent, device‑agnostic feel across Android surfaces while keeping data **local and permissioned**. No cloud. No broadcasts. **SurrealLabs cannot access your data** by design. *Vodou Certified* means it also works **independently of SurrealLabs services**.
+> **P.A.P.A.** (Personal-Aware Private Architecture) is the unified UI layer of the V.O.D.O.U. ecosystem. It delivers a consistent, device‑agnostic feel across Android surfaces while keeping data **local and permissioned**. No cloud. No broadcasts. **SurrealLabs cannot access your data** by design. *V.O.D.O.U. Certified* means it also works **independently of SurrealLabs services**.
 
-## Intended features & goals *(living document — will evolve)*
+## **Core Philosophy**
 
-* **Local-first, private by design:** no cloud, no broadcasts; data stays on-device.
-* **PAPA (Personal Aware Private Architecture):** Papa UI works independently of SurrealLabs services; open-source transparency.
-* **Ritual binding:** offline bind-only exchange (BLE primary, NFC optional, QR fallback) with LED/haptic signals (**13** on success), mirrored on-screen for accessibility.
-* **Equilibrium (feel calibration):** set `cm/360`, `px/cm`, `deg/s`; shared math so feel is consistent across devices/apps.
+P.A.P.A. reflects the SurrealLabs mission: open, privacy-first, intuitive technology that makes interaction feel natural and immersive — without corporate overreach or invasive data collection.
+
+**Core Principles:**
+
+* **Local-first**: Data remains with the user — no hidden cloud dependencies.
+* **Opt-in community**: Sharing is always a choice, never a requirement.
+* **Hardware/Software synergy**: Built to integrate seamlessly with all V.O.D.O.U.-enabled devices.
+* **No ads. No bloat. No nonsense.**
+* **Accessible power**: Advanced capabilities, made usable by anyone.
+* **Transparent binding**: In the V.O.D.O.U. ecosystem, “binding” is a consensual process. Both devices — and their users — agree to clear, transparent, and openly documented rules before interaction. There is no hidden control, no forced participation, and every binding can be ended at any time by the user.
+
+Binding is not a generic “pairing.” It’s a purposeful, thematic handshake that grants mutual trust between devices. This process is inspired by the ceremonial feel of Vodou, but reimagined in a purely technical, user-first way — blending ritual-like clarity with uncompromising privacy.
+
+---
+
+## **Intended features & goals** *(living document — will evolve)*
+
+* **Local-first, private by design:** No cloud, no broadcasts; data stays on-device.
+* **Ritual binding:** Offline bind-only exchange (BLE primary, NFC optional, QR fallback) with LED/haptic signals (**13** on success), mirrored on-screen for accessibility.
+* **Equilibrium (feel calibration):** Set `cm/360`, `px/cm`, `deg/s` so feel is consistent across devices/apps.
 * **Verify suite:** Spin & Cursor tests with live metrics and pass/fail gates → “Equilibrium achieved.”
-* **Familiar local (presence gate):** once bound, entering a recognized local auto-enables Papa interactions (privacy-preserving local fingerprint).
-* **Adapters:** Desktop / Main Engine / Editor so third‑party apps can apply Equilibrium settings without any SurrealLabs API.
-* **Certification copy:** explicit API independence + privacy pledge in-app.
-* **Accessibility:** gesture/LED/haptic patterns always mirrored on-screen; works without sensors.
+* **Familiar local (presence gate):** Once bound, entering a recognized locale auto-enables P.A.P.A. interactions (privacy-preserving local fingerprint).
+* **Adapters:** Desktop / Main Engine / Editor so third‑party apps can apply Equilibrium without SurrealLabs API.
+* **Certification copy:** Explicit API independence + privacy pledge in-app.
+* **Accessibility:** Gesture/LED/haptic patterns always mirrored on-screen; works without sensors.
 * **Multi-surface parity:** Phone, Wear OS, TV, Automotive OS; Android Auto (projection) optional.
+
+**Non‑goals (here):** Cloud services, analytics/telemetry, remote config. P.A.P.A. is strictly **local‑first**. If you choose to add your own cloud services, we provide a guide for setting up a secure VPN using OpenVPN. This is entirely optional, and you are responsible for configuring it securely. In the future, we may offer a one‑click VPN setup through **L.E.G.B.A.** integration — but that will require a SurrealLabs network rack or another capable hardware platform that can reliably run OpenVPN.
+
+---
+
+## **Why P.A.P.A. exists**
+
+P.A.P.A. delivers a **single, consistent interaction feel** across platforms. After binding a Certified device, a user can calibrate feel parameters, apply them to any P.A.P.A.-aware app, verify with Spin/Cursor tests, and receive clear feedback — all **without network dependency** and **without data ever leaving the device**.
+
+It is built to embody the **people-first, open-source, privacy-respecting ethos** of SurrealLabs and the V.O.D.O.U. ecosystem, ensuring user empowerment and trust in every interaction.
+
 
 This repository implements **Papa (the UI)** for:
 
